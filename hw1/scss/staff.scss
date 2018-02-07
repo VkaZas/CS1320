@@ -1,0 +1,28 @@
+@import "main";
+
+.staff-container {
+  width: 80%;
+  padding: 20px 40px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .staff-material {
+    width: 175px;
+    height: 300px;
+
+    .staff-avatar {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .staff-name {
+      font-weight: bold;
+    }
+    .staff-login {
+
+    }
+  }
+}
+

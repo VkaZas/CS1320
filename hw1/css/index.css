@@ -1,0 +1,10 @@
+#track-list {
+  list-style: none;
+  display: flex;
+  padding-left: 0; }
+  #track-list li {
+    flex-grow: 1; }
+  #track-list ul {
+    padding-left: 10px; }
+    #track-list ul li {
+      margin-top: 10px; }
