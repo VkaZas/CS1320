@@ -3,8 +3,22 @@
 	<head>
 		<meta charset="utf-8">
 		<title>SwiftFeed</title>
-	</head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    </head>
 	<body>
-		<!-- Your SwiftFeed HTML Structure Here  -->			          
+
+        <div class="container">
+            <div class="row">
+                <ul class="collection" id="tweets-container">
+
+                </ul>
+            </div>
+        </div>
+
+        <a class="waves-effect waves-light btn" id="btn-switch" style="position: absolute; top: 50px; left: 50px;">Stop</a>
+
+    <script src="swift.js"></script>
 	</body>
 </html>
