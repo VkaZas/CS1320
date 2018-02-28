@@ -1,0 +1,13 @@
+<form action="/logout" method="post">
+<button type="submit">Logout</button>
+</form>
+
+<h1 id="hi"></h1>
+
+<form action="/market" method="post">
+<button type="submit">Market</button>
+</form>
+
+<script>
+document.getElementById("hi").innerHTML = "Welcome, " + window.sessionStorage.getItem("username");
+</script>

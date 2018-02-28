@@ -1,0 +1,14 @@
+<body>
+  <form action="/home" method="post">
+    Username: <input id="user" type="text" name="username" value="uuu"><br>
+    Password: <input type="text" name="password" value="****************"><br>
+    <input type="submit" value="Submit" onclick="setUserName()">
+  </form>
+
+  <script>
+  function setUserName() {
+    var username = document.getElementById('user').value;
+    window.sessionStorage.setItem("username", username);
+  }
+  </script>
+</body>
