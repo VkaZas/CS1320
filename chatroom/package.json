@@ -1,0 +1,36 @@
+{
+  "name": "chatroom",
+  "version": "1.0.0",
+  "description": "hw5 chatroom",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VkaZas/CS1320.git"
+  },
+  "author": "vkazas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VkaZas/CS1320/issues"
+  },
+  "homepage": "https://github.com/VkaZas/CS1320#readme",
+  "dependencies": {
+    "any-db": "^2.2.0",
+    "any-db-sqlite3": "^2.1.4",
+    "body-parser": "^1.18.2",
+    "colors": "^1.2.1",
+    "express": "^4.16.3",
+    "pug": "^2.0.1",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.41",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^3.1.0"
+  }
+}

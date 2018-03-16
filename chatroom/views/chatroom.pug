@@ -1,0 +1,16 @@
+extends _base
+block links
+    script(src='/js/chatroom.js')
+    link(rel='stylesheet', href='/css/chatroom.css')
+    meta(name="roomID", content= roomID)
+
+block body-content
+    .row(style='height: 100%')
+        .col.l8.offset-l2#chat-container
+            #chat-panel
+    .row
+        .col.l8.offset-l2#input-container
+            .input-field.col.l10
+                input.validate#input-msg(type='text', placeholder='Message...')
+            .col.l2
+                a.waves-effect.waves-light.btn#btn-submit Submit

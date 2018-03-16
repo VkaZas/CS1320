@@ -1,0 +1,17 @@
+extends _base
+block links
+    script(src='/js/lobby.js')
+    link(rel='stylesheet', href='/css/lobby.css')
+
+block body-content
+    .row
+        .col.l12
+            h5 Room List
+    .row
+        .col.l8.offset-l2#lobby-container
+            each room in rooms
+                .card.room-card
+                    .card-content
+                        span.card-title #{room.id}
+                    .card-action
+                        a.btn-enterroom(href= '/chatroom/' + room.id) Enter

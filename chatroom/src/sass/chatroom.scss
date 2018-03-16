@@ -1,0 +1,16 @@
+#chat-container {
+  height: 500px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  #chat-panel {
+    width: 100%;
+
+    .item-container {
+      margin-top: 5px;
+      .item-nickname {
+        font-weight: bold;
+      }
+    }
+  }
+}

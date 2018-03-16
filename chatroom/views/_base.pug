@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        title=title
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+        link(rel='stylesheet', href='/css/common.css')
+        script(src='https://code.jquery.com/jquery-3.2.1.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js')
+        script(src='/js/common.js')
+
+        block links
+    body
+        .navbar-fixed#navbar-fixed
+            nav
+                .nav-wrapper
+                    a.brand-logo(href='/')=logo_title
+                    ul.right.hide-on-med-and-down
+                        if type === 0
+                            li: a#btn-addroom New Room
+                        else
+                            li#nav-nickname
+
+        block body-content

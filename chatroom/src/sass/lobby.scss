@@ -1,0 +1,12 @@
+#lobby-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .room-card {
+    flex-grow: 1;
+    min-width: 30%;
+    margin: 15px;
+  }
+}
