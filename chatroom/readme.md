@@ -1,5 +1,13 @@
 # Chat Room
 
+Updates for Realtime:
+
+- Instant messages and member lists are now transferring using _socket.io_.
+- Other functionalities remain to use AJAX.
+- Nicknames in member list shares the same color as their appearance in chats.
+
+----------------------------------------------------
+
 All 12 requirements are satisfied.
 
 Some features:

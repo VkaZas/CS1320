@@ -5,12 +5,24 @@ block links
     meta(name="roomID", content= roomID)
 
 block body-content
-    .row(style='height: 100%')
-        .col.l8.offset-l2#chat-container
-            #chat-panel
     .row
-        .col.l8.offset-l2#input-container
+        .col.l7.offset-l1
+            h5 Chats
+        .col.l2.offset-l1
+            h5 Members
+    .row(style='height: 100%')
+        .col.l7.offset-l1.scroll-container#chat-container
+            .scroll-panel#chat-panel
+        .col.l2.offset-l1.scroll-container#member-container
+            .scroll-panel#member-panel
+    .row
+        .col.l7.offset-l1#input-container
             .input-field.col.l10
                 input.validate#input-msg(type='text', placeholder='Message...')
             .col.l2
                 a.waves-effect.waves-light.btn#btn-submit Submit
+        .col.l2.offset-l1
+            .input-field.col.l10
+                input.validate#input-nickname(type='text', placeholder='New nickname...')
+            .col.l2
+                a.waves-effect.waves-light.btn#btn-nickname Change

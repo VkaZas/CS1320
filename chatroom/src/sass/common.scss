@@ -1,9 +1,10 @@
 html, body {
   width: 100%;
+  overflow: hidden;
 }
 
 #navbar-fixed {
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 
   .nav-wrapper {
     padding-left: 50px;

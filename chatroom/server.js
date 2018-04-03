@@ -1,3 +1,4 @@
+const http = require('http');
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -55,5 +56,60 @@ app.use((req, res) => {
 });
 
 
-app.listen(8080);
+// Socket.IO
+const server = http.createServer(app);
+const io = require('socket.io').listen(server);
+
+io.on('connection', (socket) => {
+    // User join room
+    socket.on('join', (roomName, nickName, cb) => {
+        socket.join(roomName);
+        socket.nickname = nickName;
+        socket.roomname = roomName;
+        conn.query('SELECT nickname,body,time FROM message WHERE room=$1', [roomName], (err, data) => {
+            cb(data.rows);
+        });
+        emitChangeMember(roomName);
+    });
+
+    // User change nickname
+    socket.on('nickname', (nickname) => {
+        socket.nickname = nickname;
+        emitChangeMember(socket.roomname);
+    });
+
+    // User send message
+    socket.on('message', (message) => {
+        const time = Date.now();
+
+        // Save in db
+        conn.query('INSERT INTO message (body,nickname,room,time) VALUES($1,$2,$3,$4)', [
+            message,
+            socket.nickname,
+            socket.roomname,
+            time,
+        ], (err, data) => {
+            // console.log(data);
+        });
+
+        // Broadcast in the room
+        io.sockets.in(socket.roomname).emit('message', socket.nickname, message, time);
+    });
+
+    // User disconnect
+    socket.on('disconnect', () => {
+        emitChangeMember(socket.roomname);
+        socket.leave(socket.roomname);
+    });
+
+    function emitChangeMember(roomName) {
+        if (!io.sockets.adapter.rooms[roomName]) return;
+        const clients = Object.keys(io.sockets.adapter.rooms[roomName].sockets).map((id) => {
+            return {nickname: io.sockets.connected[id].nickname};
+        });
+        io.sockets.in(roomName).emit('memberList', clients);
+    }
+});
+
+server.listen(8080);
 console.log('Server is listening to port 8080.'.green);
